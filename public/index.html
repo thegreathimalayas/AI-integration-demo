@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hybrid AI Consulting | Product Management + AI Solutions</title>
+  <meta
+    name="description"
+    content="Transform your business with hybrid AI solutions. 8+ years product management expertise. Healthcare, finance, retail, manufacturing. ROI-driven AI consulting."
+  />
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --secondary: #7b2ff7;
+      --accent: #ff0080;
+      --dark: #0a0e27;
+      --darker: #050816;
+      --light: #f0f4ff;
+      --gray: #8892b0;
+      --success: #00ff88;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        var(--darker) 0%,
+        #1a1f3a 50%,
+        var(--darker) 100%
+      );
+      z-index: -2;
+    }
+
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+          rgba(0, 212, 255, 0.03) 1px,
+          transparent 1px
+        ),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50px, 50px);
+      }
+    }
+
+    /* Glowing orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--primary);
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--secondary);
+      top: 50%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .orb-3 {
+      width: 350px;
+      height: 350px;
+      background: var(--accent);
+      bottom: 10%;
+      left: 50%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(50px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-50px, 50px) scale(0.9);
+      }
+    }
+
+    /* Header/Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      background: rgba(10, 14, 39, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 5% 4rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      background: linear-gradient(
+        135deg,
+        var(--light) 0%,
+        var(--primary) 50%,
+        var(--secondary) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--gray);
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out 0.2s backwards;
+    }
+
+    .hero .tagline {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--gray);
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out 0.4s backwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Value Props */
+    .value-props {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out 0.6s backwards;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+    }
+
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 1rem;
+    }
+
+    .value-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--primary);
+      stroke-width: 2;
+      fill: none;
+      transition: all 0.3s;
+    }
+
+    .value-card:hover .value-icon svg {
+      stroke: var(--light);
+      transform: scale(1.1);
+    }
+
+    .value-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--light);
+    }
+
+    .value-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.8s backwards;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--dark);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 6rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--light), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Hybrid Framework Section */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .framework-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .framework-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .framework-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.15);
+      border-color: var(--primary);
+    }
+
+    .framework-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .framework-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .framework-card li {
+      padding: 0.5rem 0;
+      color: var(--gray);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .framework-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(
+        circle,
+        rgba(0, 212, 255, 0.1) 0%,
+        transparent 70%
+      );
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+      border-color: var(--primary);
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .service-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--primary);
+      stroke-width: 1.5;
+      fill: none;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover .service-icon svg {
+      stroke: var(--light);
+      transform: scale(1.1);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+
+    .service-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .service-price {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 20px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* Industries Section */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .industry-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 16px;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .industry-tag:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+    }
+
+    .industry-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .industry-content {
+      padding: 1.5rem 1rem;
+    }
+
+    .industry-tag h4 {
+      font-size: 1.1rem;
+      color: var(--light);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .industry-tag p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* Case Studies */
+    .case-studies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .case-study {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .case-study:hover {
+      border-color: var(--primary);
+      box-shadow: 0 15px 50px rgba(0, 212, 255, 0.15);
+    }
+
+    .case-study-tag {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--success);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .case-study h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+
+    .case-study .challenge {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .results {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+
+    .results li {
+      padding: 0.6rem 0;
+      color: var(--success);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(
+        135deg,
+        rgba(0, 212, 255, 0.05),
+        rgba(123, 47, 247, 0.05)
+      );
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 30px;
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--light), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-section p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .contact-options {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      min-width: 200px;
+      transition: all 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 1rem;
+    }
+
+    .contact-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--primary);
+      transition: all 0.3s;
+    }
+
+    .contact-card:hover .contact-icon svg {
+      stroke: var(--light);
+      transform: scale(1.1);
+    }
+
+    .contact-card h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(10, 14, 39, 0.8);
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+      padding: 3rem 5%;
+      text-align: center;
+      color: var(--gray);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 6rem 5% 3rem;
+      }
+
+      section {
+        padding: 4rem 5%;
+      }
+
+      .value-props,
+      .services-grid,
+      .industries-grid,
+      .case-studies {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* On very small screens, make chat shorter */
+      .chatbot-panel {
+        width: 100%;
+        height: 50vh;
+        top: auto;
+        bottom: 0;
+        border-left: none;
+        border-top: 1px solid rgba(0, 212, 255, 0.2);
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===========================
+       CHATBOT PANEL (RIGHT SIDE)
+       =========================== */
+    #chatPanel {
+      position: fixed;
+      bottom: 80px;  /* Above button */
+      right: 20px;
+      width: 380px;
+      height: 75%;
+      background: white;
+      color: black;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease;
+      transform: translateX(120%); /* hidden */
+      display: flex;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .chatbot-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #2563eb, #00d4ff);
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chatbot-header span {
+      font-size: 18px;
+    }
+
+    .chat-close-btn {
+      margin-left: auto;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 0 4px;
+    }
+
+    .chatbot-body {
+      flex: 1;
+      padding: 10px 12px;
+      overflow-y: auto;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+    }
+
+    .chatbot-message {
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .chatbot-message.user {
+      text-align: right;
+    }
+
+    .chatbot-message.user span {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 12px 12px 0 12px;
+      max-width: 90%;
+    }
+
+    .chatbot-message.ai span {
+      display: inline-block;
+      background: #0b1120;
+      color: #e5e7eb;
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      padding: 6px 10px;
+      border-radius: 12px 12px 12px 0;
+      max-width: 95%;
+      white-space: pre-line;
+    }
+
+    .chatbot-input-area {
+      padding: 8px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: #020617;
+      display: flex;
+      gap: 6px;
+    }
+
+    .chatbot-input-area input {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .chatbot-input-area input::placeholder {
+      color: #6b7280;
+    }
+
+    .chatbot-input-area button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .chatbot-input-area button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="logo">⚡ HybridAI</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Business with Hybrid AI Solutions</h1>
+      <p class="subtitle">Where Human Expertise Meets Artificial Intelligence</p>
+      <p class="tagline">
+        8+ years of product management expertise. Proven track record across
+        industries. ROI-driven solutions.
+      </p>
+
+      <div class="value-props">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </div>
+          <h3>Hybrid AI-Human Framework</h3>
+          <p>Better decisions, fewer errors, ethical AI</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3>Product Management Excellence</h3>
+          <p>From strategy to deployment, we own outcomes</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              />
+            </svg>
+          </div>
+          <h3>Industry-Specific Solutions</h3>
+          <p>Deep expertise across 10+ verticals</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">Schedule Free AI Assessment</a>
+        <a href="#services" class="btn btn-secondary">View Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="hybrid">
+    <div class="section-header fade-in">
+      <h2>Why Choose Our Hybrid AI Approach?</h2>
+      <p>The Best of Both Worlds: AI Efficiency + Human Wisdom</p>
+    </div>
+
+    <div class="framework-grid">
+      <div class="framework-card fade-in">
+        <h3>⚡ AI for Speed & Scale</h3>
+        <ul>
+          <li>Process millions of data points in seconds</li>
+          <li>Automate repetitive tasks 24/7</li>
+          <li>Predict outcomes with ML precision</li>
+          <li>Reduce operational costs by 30-40%</li>
+        </ul>
+      </div>
+
+      <div class="framework-card fade-in">
+        <h3>🧠 Human for Context & Ethics</h3>
+        <ul>
+          <li>Validate AI decisions with domain expertise</li>
+          <li>Handle ambiguous cases requiring judgment</li>
+          <li>Ensure ethical, bias-free implementations</li>
+          <li>Provide strategic oversight and governance</li>
+        </ul>
+      </div>
+
+      <div class="framework-card fade-in">
+        <h3>📈 Proven Results</h3>
+        <ul>
+          <li>95% accuracy rates achieved</li>
+          <li>45% faster time-to-value</li>
+          <li>85% user trust vs. 45% for AI-only</li>
+          <li>40% higher accuracy than competitors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-header fade-in">
+      <h2>Comprehensive AI Consulting Services</h2>
+      <p>End-to-end AI solutions tailored to your business needs</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+            />
+          </svg>
+        </div>
+        <h3>AI Strategy & Roadmap</h3>
+        <p>
+          Transform your AI vision into an executable 12-month roadmap with
+          clear milestones, ROI targets, and risk mitigation strategies.
+        </p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-8.48 8.48l-4.24 4.24M23 12h-6m-6 0H1m15.66 8.66l-4.24-4.24m-8.48-8.48l-4.24-4.24"
+            />
+          </svg>
+        </div>
+        <h3>Custom AI Development</h3>
+        <p>
+          Build production-ready AI systems: Predictive ML, Generative AI (LLMs),
+          Computer Vision, Recommendation Engines using our hybrid framework.
+        </p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
+            />
+            <circle cx="9" cy="7" r="4" />
+            <path
+              d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"
+            />
+          </svg>
+        </div>
+        <h3>AI Integration & Modernization</h3>
+        <p>
+          Integrate AI into existing systems (ERP, CRM, websites, apps) without
+          disrupting operations. API-first, backward compatible.
+        </p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 14l9-5-9-5-9 5 9 5z"
+            />
+            <path
+              d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+            />
+            <path
+              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+            />
+          </svg>
+        </div>
+        <h3>AI Training & Coaching</h3>
+        <p>
+          Upskill your team with hands-on programs: Executive AI Literacy,
+          Product Manager Bootcamp, Developer Training, Custom Certifications.
+        </p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+        </div>
+        <h3>AI Audit & Compliance</h3>
+        <p>
+          Evaluate AI systems for performance, bias, security, and regulatory
+          compliance (HIPAA, GDPR, industry-specific regulations).
+        </p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+        </div>
+        <h3>AI Product Management</h3>
+        <p>
+          End-to-end product management: Strategy, discovery, agile development,
+          analytics, scaling. Fractional PM or dedicated roles available.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries">
+    <div class="section-header fade-in">
+      <h2>Industries We Transform</h2>
+      <p>Industry-tailored AI solutions built on deep domain expertise</p>
+    </div>
+
+    <div class="industries-grid">
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&h=500&fit=crop&q=80"
+          alt="Healthcare AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Healthcare</h4>
+          <p>Diagnostics, Patient Care, Medical Imaging</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=500&fit=crop&q=80"
+          alt="Finance AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Finance & Banking</h4>
+          <p>Fraud Detection, Credit Scoring, Trading</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop&q=80"
+          alt="Retail AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Retail & E-commerce</h4>
+          <p>Personalization, Inventory, Customer Analytics</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop&q=80"
+          alt="Manufacturing AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Manufacturing</h4>
+          <p>Predictive Maintenance, Quality Control</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&q=80"
+          alt="Telecom AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Telecommunications</h4>
+          <p>Network Optimization, Customer Retention</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=500&fit=crop&q=80"
+          alt="Energy AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Energy & Utilities</h4>
+          <p>Demand Forecasting, Smart Grid Management</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=500&fit=crop&q=80"
+          alt="Automotive AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Automotive</h4>
+          <p>Autonomous Vehicles, Predictive Analytics</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&h=500&fit=crop&q=80"
+          alt="Logistics AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Logistics & Supply Chain</h4>
+          <p>Route Optimization, Warehouse Automation</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop&q=80"
+          alt="Education AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Education</h4>
+          <p>Personalized Learning, Student Analytics</p>
+        </div>
+      </div>
+      <div class="industry-tag fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=500&fit=crop&q=80"
+          alt="Real Estate AI Solutions"
+          class="industry-img"
+        />
+        <div class="industry-content">
+          <h4>Real Estate</h4>
+          <p>Property Valuation, Smart Matching</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="case-studies">
+    <div class="section-header fade-in">
+      <h2>Real Impact, Real Results</h2>
+      <p>Success stories from our clients across industries</p>
+    </div>
+
+    <div class="case-studies">
+      <div class="case-study fade-in">
+        <span class="case-study-tag">Travel & Tourism</span>
+        <h3>₹5 Cr Revenue Impact</h3>
+        <p class="challenge">
+          <strong>Challenge:</strong> Manual booking process causing 30%
+          abandonment
+        </p>
+        <ul class="results">
+          <li>✓ 9x booking volume growth</li>
+          <li>✓ 92% conversion rate achieved</li>
+          <li>✓ 3-month ROI payback</li>
+          <li>✓ 94% cost reduction per booking</li>
+        </ul>
+      </div>
+
+      <div class="case-study fade-in">
+        <span class="case-study-tag">Healthcare</span>
+        <h3>Diagnostic AI System</h3>
+        <p class="challenge">
+          <strong>Challenge:</strong> 2-3 day delays in radiology reports
+        </p>
+        <ul class="results">
+          <li>✓ 48hrs → 6hrs turnaround time</li>
+          <li>✓ 3x radiologist productivity</li>
+          <li>✓ 95% accuracy validated</li>
+          <li>✓ ₹40L annual savings</li>
+        </ul>
+      </div>
+
+      <div class="case-study fade-in">
+        <span class="case-study-tag">Retail</span>
+        <h3>Demand Forecasting AI</h3>
+        <p class="challenge">
+          <strong>Challenge:</strong> 20% inventory waste from poor forecasting
+        </p>
+        <ul class="results">
+          <li>✓ 92% forecast accuracy</li>
+          <li>✓ 60% waste reduction</li>
+          <li>✓ ₹6 Cr annual savings</li>
+          <li>✓ 5-month ROI payback</li>
+        </ul>
+      </div>
+
+      <div class="case-study fade-in">
+        <span class="case-study-tag">Manufacturing</span>
+        <h3>Predictive Maintenance</h3>
+        <p class="challenge">
+          <strong>Challenge:</strong> ₹15L/month unplanned downtime costs
+        </p>
+        <ul class="results">
+          <li>✓ 80% downtime reduction</li>
+          <li>✓ 30% maintenance cost savings</li>
+          <li>✓ 20% equipment lifespan increase</li>
+          <li>✓ ₹1.2 Cr annual savings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-section fade-in">
+      <h2>Ready to Transform Your Business with AI?</h2>
+      <p>Let's start with a free 30-minute AI Readiness Assessment</p>
+
+      <div class="cta-buttons">
+        <a href="mailto:your-email@domain.com" class="btn btn-primary"
+          >Schedule Free Assessment</a
+        >
+        <a href="#services" class="btn btn-secondary"
+          >Download AI Strategy Guide</a
+        >
+      </div>
+
+      <div class="contact-options">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <h4>Email</h4>
+          <p>your-email@domain.com</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+          </div>
+          <h4>Phone/WhatsApp</h4>
+          <p>+91-XXXXX-XXXXX</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </div>
+          <h4>Location</h4>
+          <p>Siliguri, Northeast India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#contact">Contact</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+      <p>&copy; 2025 HybridAI Consulting. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+        Hybrid AI-Human Framework | Product Management Excellence | 8+ Years
+        Experience
+      </p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CHATBOT PANEL (RIGHT SIDE) -->
+  <div id="chatPanel" class="chatbot-panel">
+    <div class="chatbot-header">
+      <span>🤖</span>
+      <div>
+        HybridAI Assistant
+        <div style="font-size: 11px; font-weight: 400;">
+          Ask about our services, industries & case studies
+        </div>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">×</button>
+    </div>
+    <div id="chatbotBody" class="chatbot-body">
+      <div class="chatbot-message ai">
+        <span>
+          • Hi! I’m the HybridAI assistant.<br />
+          • You can ask me about our services, industries we serve, or case
+          studies.<br />
+          • I only answer using the content from this website.
+        </span>
+      </div>
+    </div>
+    <div class="chatbot-input-area">
+      <input
+        id="chatbotInput"
+        type="text"
+        placeholder="Ask something about this website..."
+      />
+      <button id="chatbotSendBtn" onclick="sendChatMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".fade-in").forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+
+    // =============== CHATBOT LOGIC + HISTORY =================
+    const chatInput = document.getElementById("chatbotInput");
+    const chatBody = document.getElementById("chatbotBody");
+    const sendBtn = document.getElementById("chatbotSendBtn");
+
+    const CHAT_STORAGE_KEY = "hybridAI_chat_history_v1";
+    let chatHistory = [];
+
+    function saveChatHistory() {
+      try {
+        localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(chatHistory));
+      } catch (e) {
+        console.warn("Could not save chat history", e);
+      }
+    }
+
+    function loadChatHistory() {
+      try {
+        const raw = localStorage.getItem(CHAT_STORAGE_KEY);
+        if (!raw) return;
+
+        const data = JSON.parse(raw);
+        if (!Array.isArray(data)) return;
+
+        chatHistory = data;
+        chatBody.innerHTML = "";
+
+        chatHistory.forEach(msg => {
+          addChatMessage(msg.sender, msg.text, false);
+        });
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+      } catch (e) {
+        console.warn("Could not load chat history", e);
+      }
+    }
+
+    function addChatMessage(sender, text, save = true) {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("chatbot-message", sender);
+
+      const bubble = document.createElement("span");
+      bubble.innerText = text;
+
+      wrapper.appendChild(bubble);
+      chatBody.appendChild(wrapper);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      if (save) {
+        chatHistory.push({
+          sender,
+          text,
+          ts: Date.now()
+        });
+        saveChatHistory();
+      }
+    }
+
+    loadChatHistory();
+
+    async function sendChatMessage() {
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      addChatMessage("user", message);
+      chatInput.value = "";
+      chatInput.focus();
+
+      sendBtn.disabled = true;
+      const thinkingId = "thinking-msg-" + Date.now();
+      const thinking = document.createElement("div");
+      thinking.classList.add("chatbot-message", "ai");
+      thinking.id = thinkingId;
+      thinking.innerHTML = "<span>• Thinking...</span>";
+      chatBody.appendChild(thinking);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      try {
+        const response = await fetch("http://localhost:5000/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+        thinking.remove();
+
+        const replyText =
+          data.reply ||
+          "I'm sorry, I can only answer questions related to our website content.";
+
+        addChatMessage("ai", replyText);
+      } catch (err) {
+        thinking.remove();
+        addChatMessage(
+          "ai",
+          "• There was a problem contacting the server.\n• Please check if the backend is running on http://localhost:5000."
+        );
+      } finally {
+        sendBtn.disabled = false;
+      }
+    }
+
+    chatInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        sendChatMessage();
+      }
+    });
+
+    function toggleChat() {
+      const panel = document.getElementById("chatPanel");
+      const isOpen = panel.style.transform === "translateX(0%)";
+      panel.style.transform = isOpen ? "translateX(120%)" : "translateX(0%)";
+    }
+  </script>
+
+  <!-- ROUND FLOATING BUTTON (🤖) -->
+  <button
+    id="toggleChatBtn"
+    onclick="toggleChat()"
+    style="
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    "
+  >
+    🤖
+  </button>
+
+</body>
+</html>
